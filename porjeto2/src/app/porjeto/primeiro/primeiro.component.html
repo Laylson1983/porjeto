@@ -1,0 +1,42 @@
+<article>
+  <h1>Interpolação</h1>
+  <p>nome: {{ nome }}</p>
+</article>
+<article>
+  <h1>property Binding</h1>
+  <p [style.color]="cor">lorem</p>
+</article>
+<article>
+  <h1>Evenvet Binding</h1>
+  <input type="button" value="clica" (click)="imprime()" />
+</article>
+<article>
+  <h1>Two Way Data Binding</h1>
+  <p [style.background]="cor2">Texto qualquer</p>
+  <input type="button" value="mudar" (click)="mudar()" />
+</article>
+<article>
+  <h1>variável de template</h1>
+  <p [style.color]="cor3">texto qualquer</p>
+  <select (change)="mudar2(valor.value)" #valor>
+    <option value="red">vermelho</option>
+    <option value="green">verde</option>
+    <option value="blue">azul</option>
+  </select>
+</article>
+<article>
+  <h1>diretivas estruturais - *ngIf</h1>
+  <!-- primeira forma de *ngIf-->
+  <p *ngIf="!usuario">Usuário não autorizado</p>
+  <p *ngIf="usuario">1-{{ usuario }}</p>
+  <!-- segunda forma de *ngIf-->
+  <p *ngIf="!usuario; else senao">Usuário não autorizado</p>
+  <ng-template #senao>
+    <p>2-{{ usuario }}</p>
+  </ng-template>
+</article>
+<article>
+  <h1>diretivas estrutural - *ngFor</h1>
+  <h2>Lista de cursos:</h2>
+  <p *ngFor="let curso of cursos; index as i">{{ i + 1 }}º {{ curso }}</p>
+</article>
